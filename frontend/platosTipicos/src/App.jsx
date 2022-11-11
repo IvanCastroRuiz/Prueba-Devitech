@@ -7,6 +7,7 @@ import {
 import LayoutPublic from './Layout/LayoutPublic';
 
 import Home from './pages/Home';
+import CreatePlato from './pages/CreatePlato';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Routes>
             <Route exact path="/" element={<LayoutPublic />}>
               <Route path="/" element={<Home/>}/>
+              <Route path="create-plato" element={<CreatePlato/>}/>
             </Route>
       </Routes>  
     </BrowserRouter>

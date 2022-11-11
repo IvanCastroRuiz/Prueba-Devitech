@@ -2,12 +2,14 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
+import { NavLink } from 'react-router-dom';
+
 
 const Navegacion = () => {
 
     const navigation = [
-        { name: 'Listado Platos', href: '#', current: false },
-        { name: 'Crear Plato', href: '#', current: false }
+        { name: 'Listado Platos', href:'/', current: false },
+        { name: 'Crear Plato', href:'create-plato', current: false }
       ]
 
     function classNames(...classes) {
@@ -17,7 +19,7 @@ const Navegacion = () => {
   return (
    <>
         {/* Inicio Nav */}
-        <Disclosure as="nav" className="bg-emerald-700">
+        <Disclosure as="nav" className="bg-gray-500">
                 {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -49,9 +51,9 @@ const Navegacion = () => {
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                             {navigation.map((item) => (
-                                <a
+                                <NavLink 
                                 key={item.name}
-                                href={item.href}
+                                to={item.href}
                                 className={classNames(
                                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                                     'px-3 py-2 rounded-md text-sm font-medium'
@@ -59,7 +61,7 @@ const Navegacion = () => {
                                 aria-current={item.current ? 'page' : undefined}
                                 >
                                 {item.name}
-                                </a>
+                                </NavLink >
                             ))}
                             </div>
                         </div>
@@ -97,32 +99,32 @@ const Navegacion = () => {
                             <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                 <Menu.Item>
                                 {({ active }) => (
-                                    <a
+                                    <NavLink
                                     href="#"
                                     className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                     >
                                     Your Profile
-                                    </a>
+                                    </NavLink>
                                 )}
                                 </Menu.Item>
                                 <Menu.Item>
                                 {({ active }) => (
-                                    <a
+                                    <NavLink 
                                     href="#"
                                     className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                     >
                                     Settings
-                                    </a>
+                                    </NavLink >
                                 )}
                                 </Menu.Item>
                                 <Menu.Item>
                                 {({ active }) => (
-                                    <a
+                                    <NavLink 
                                     href="#"
                                     className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                     >
                                     Sign out
-                                    </a>
+                                    </NavLink>
                                 )}
                                 </Menu.Item>
                             </Menu.Items>
