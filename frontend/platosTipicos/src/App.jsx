@@ -9,6 +9,7 @@ import LayoutPublic from './Layout/LayoutPublic';
 import Home from './pages/Home';
 import CreatePlato from './pages/CreatePlato';
 import DetallePlato from './pages/DetallePlato';
+import EditPlato from './pages/EditPlato';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
               <Route path="/" element={<Home/>}/>
               <Route path="create-plato" element={<CreatePlato/>}/>
               <Route path="detalle-plato/:id" element={<DetallePlato/>}/> 
+              <Route path="edit-plato/:id" element={<EditPlato/>}/> 
             </Route>
       </Routes>  
     </BrowserRouter>

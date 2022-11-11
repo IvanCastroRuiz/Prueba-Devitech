@@ -9,9 +9,9 @@ const DetallePlato = () => {
 
     const params = useParams();
     const { id } = params;
-   
     const [ plato, setPlato ] = useState({});
     const [ spinner, setSpinner ] = useState(true);  
+    const [eliminado, setEliminado ] = useState(false);
 
     useEffect( () =>{
         const consultarApi = async () =>{
@@ -19,7 +19,6 @@ const DetallePlato = () => {
 
             const { data } = await clienteAxios(`/platos/get/${id}`);  
             setPlato(data);
-      
           } catch (error) {
               console.log("Error: " + error.message);
           }
@@ -33,8 +32,8 @@ const DetallePlato = () => {
     const deletePlato = async (id) => {
         
         try {
-            const { data } = await clienteAxios.delete(`/platos/delete/${id}`);   
-            console.log(data);
+           await clienteAxios.delete(`/platos/delete/${id}`);   
+           setEliminado(true)
         } catch (error) {
             console.log(error.message);
         }
@@ -64,7 +63,7 @@ const DetallePlato = () => {
             if (result.isConfirmed) {
 
                 deletePlato(_id);
-                window.location.to("/");
+
                 swalWithBootstrapButtons.fire(
                     'Eliminado!',
                     'El plato se elimino',
@@ -85,7 +84,9 @@ const DetallePlato = () => {
 
 
   return (
+    
     <main className='container mx-auto mt-10'>
+        {eliminado && <Navigate to="/"/>}
         {
             spinner 
                     ?
@@ -133,7 +134,7 @@ const DetallePlato = () => {
     
                                 <Link
                                     className="btn bg-green-600 text-center text-xl text-white font-bold p-2 uppercase rounded-md"
-                                    to="/"
+                                    to={`/edit-plato/${_id}`}
                                 >
                                     Editar
                                 </Link>
