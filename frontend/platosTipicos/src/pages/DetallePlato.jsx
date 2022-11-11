@@ -19,6 +19,7 @@ const DetallePlato = () => {
 
             const { data } = await clienteAxios(`/platos/get/${id}`);  
             setPlato(data);
+
           } catch (error) {
               console.log("Error: " + error.message);
           }
