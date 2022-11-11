@@ -15,8 +15,6 @@ const createPlatos = async (req, res) => {
     try {
         const { nombre, description, precio } = req.body;
         let image;
-
-        console.log(nombre, description, precio);
         
         /*if (req.files.image) {
             const result = await uploadImage(req.files.image.tempFilePath);
