@@ -61,7 +61,7 @@ const EditPlato = () => {
 
   return (
     <main className='container mx-auto mt-10'>
-       {editado && <Navigate to={`/edit-plato/${_id}`}/>} 
+       {editado && <Navigate to='/'/>} 
        {
           spinner
                     ?
@@ -85,13 +85,25 @@ const EditPlato = () => {
 
                                                   
                                                   <div className="form-group mt-2">  
-                                                            <div >
-                                                              <img
-                                                                  src={image.url}
-                                                                  alt={nombre}
-                                                                  className="object-containt h-52 m-auto rounded-md"
-                                                              />
-                                                            </div>
+                                                            {
+                                                              image
+                                                                    ?
+                                                                      <div >
+                                                                        <img
+                                                                            src={image.url}
+                                                                            alt={nombre}
+                                                                            className="object-containt h-52 m-auto rounded-md"
+                                                                        />
+                                                                      </div>
+                                                                    :
+                                                                      <div >
+                                                                        <img
+                                                                            src="https://res.cloudinary.com/drfppwpaq/image/upload/v1668152873/images_1_sjynjm.jpg"
+                                                                            alt="sin imagen"
+                                                                            className="object-containt h-52 m-auto rounded-md"
+                                                                        />
+                                                                      </div>
+                                                            }
                                                   </div>
 
 
@@ -140,6 +152,7 @@ const EditPlato = () => {
                                                   </div>
                                                   <div className="form-group mt-4">
                                                       <label htmlFor="file0" className='font-medium text-xl block'>Imagen</label>
+                                                      En construccion
                                                       {/* <input 
                                                         type="file" 
                                                         name="image" 

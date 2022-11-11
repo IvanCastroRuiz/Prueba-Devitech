@@ -110,6 +110,7 @@ const CreatePlato = () => {
                       </div>
                       <div className="form-group mt-4">
                           <label htmlFor="image" className='font-medium text-xl block '>Imagen</label>
+                           En construccion
                           {/* <input 
                             type="file" 
                             name="image" 
