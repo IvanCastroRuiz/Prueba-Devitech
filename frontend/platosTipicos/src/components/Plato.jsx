@@ -7,13 +7,29 @@ const Plato = ({plato}) => {
 
   return (
     <div key={_id} className="group relative shadow-2xl p-4">
-        <div className=" aspect-w-1 aspect-h-1 w-full overflow-hidden group-hover:opacity-75 lg:aspect-none lg:h-44">
-            <img
-                src={image.url}
-                alt={nombre}
-                className="object-containt w-64 mx-auto h-44 rounded-md"
-            />
-       </div>
+
+        {
+            image
+                  ?
+                    <div className=" aspect-w-1 aspect-h-1 w-full overflow-hidden group-hover:opacity-75 lg:aspect-none lg:h-44">
+                            <img
+                                src={image.url}
+                                alt={nombre}
+                                className="object-containt w-64 mx-auto h-44 rounded-md"
+                            />
+                    </div>
+
+                   :
+
+                   <div className=" aspect-w-1 aspect-h-1 w-full overflow-hidden group-hover:opacity-75 lg:aspect-none lg:h-44">
+                            <img
+                                src="https://res.cloudinary.com/drfppwpaq/image/upload/v1668152873/images_1_sjynjm.jpg"
+                                alt="sin imagen"
+                                className="object-containt w-64 mx-auto h-44 rounded-md"
+                            />
+                    </div>
+        }
+        
 
        <div className="mt-4 flex justify-between">
             <div>
