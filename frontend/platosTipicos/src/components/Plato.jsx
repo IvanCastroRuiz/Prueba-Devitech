@@ -2,10 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Plato = ({plato}) => {
 
-    const { _id, nombre, precio, image, description  } = plato;
-
-
-    console.log(_id, nombre, precio, image, description);
+    const { _id, nombre, precio, image  } = plato;
 
 
   return (

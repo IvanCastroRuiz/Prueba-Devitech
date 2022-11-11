@@ -80,7 +80,7 @@ const deletePlatos = async (req, res) => {
             }
 
             // return res.sendStatus(204);
-            return res.status(500).json({ msg: "Plato Eliminado correctamente" });    
+            return res.status(204).json({ msg: "Plato Eliminado correctamente" });    
         }
     } catch (error) {
         return res.status(500).json({ message: error.message });
