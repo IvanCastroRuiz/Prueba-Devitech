@@ -140,7 +140,7 @@ const EditPlato = () => {
                                                   </div>
                                                   <div className="form-group mt-4">
                                                       <label htmlFor="file0" className='font-medium text-xl block'>Imagen</label>
-                                                      <input 
+                                                      {/* <input 
                                                         type="file" 
                                                         name="image" 
                                                         className='text-gray-400' 
@@ -148,7 +148,7 @@ const EditPlato = () => {
                                                         //   ...plato, 
                                                         //   [e.target.name] : e.target.files[0]
                                                         // })}
-                                                      />
+                                                      /> */}
                                                   </div>
                                                   <div className="form-group mt-4 flex justify-center">
                                                       <input 

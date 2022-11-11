@@ -110,12 +110,12 @@ const CreatePlato = () => {
                       </div>
                       <div className="form-group mt-4">
                           <label htmlFor="image" className='font-medium text-xl block '>Imagen</label>
-                          <input 
+                          {/* <input 
                             type="file" 
                             name="image" 
                             className='text-gray-400' 
                             onChange={ e => setImage(e.target.files[0]) }
-                           />
+                           /> */}
                       </div>
                       <div className="form-group mt-4 flex justify-center">
                           <input type="submit" value="Guardar" className="bg-green-900 text-white mt-4 p-2 uppercase rounded hover:cursor-pointer hover:bg-green-700 transition-colors" />
