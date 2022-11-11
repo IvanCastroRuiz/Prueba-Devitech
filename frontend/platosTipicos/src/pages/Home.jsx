@@ -15,7 +15,6 @@ const Home = () => {
       try {
 
           const { data } = await clienteAxios('/platos/get');
-          console.log(data);
           setPlatos(data);
   
       } catch (error) {
