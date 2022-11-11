@@ -28,6 +28,10 @@ const DetallePlato = () => {
     
       const { _id, nombre, description, precio, image} = plato
 
+      const handelClick = () => {
+        console.log("Borrar");
+      };
+
 
   return (
     <main className='container mx-auto mt-10'>
@@ -77,7 +81,7 @@ const DetallePlato = () => {
                                 </Link>
 
                                 <Link
-                                    className="btn bg-cyan-600 text-center text-3xl text-slate-200 font-bold"
+                                    className="btn bg-green-600 text-center text-3xl text-slate-200 font-bold"
                                     to="/"
                                 >
                                     Editar
@@ -85,8 +89,9 @@ const DetallePlato = () => {
 
 
                                 <Link
-                                    className="btn bg-cyan-600 text-center text-3xl text-slate-200 font-bold"
-                                    to="/"
+                                    className="btn bg-red-600 text-center text-3xl text-slate-200 font-bold"
+                                    to="#"
+                                    onClick={handelClick}
                                 >
                                     Eliminar
                                 </Link>    
