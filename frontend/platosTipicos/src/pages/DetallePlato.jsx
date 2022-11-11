@@ -12,7 +12,6 @@ const DetallePlato = () => {
    
     const [ plato, setPlato ] = useState({});
     const [ spinner, setSpinner ] = useState(true);  
-    const [ confir, setConfir ] = useState(true);  
 
     useEffect( () =>{
         const consultarApi = async () =>{
@@ -32,7 +31,7 @@ const DetallePlato = () => {
 
 
     const deletePlato = async (id) => {
-            
+        
         try {
             const { data } = await clienteAxios.delete(`/platos/delete/${id}`);   
             console.log(data);
@@ -43,8 +42,8 @@ const DetallePlato = () => {
     };
 
 
-    const handelClick = async () => {
-    
+    const handelClick = async (e) => {
+        e.preventDefault();
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn bg-red-600 rounded-md text-white text-center p-2 font-bold mx-2',
@@ -65,7 +64,7 @@ const DetallePlato = () => {
             if (result.isConfirmed) {
 
                 deletePlato(_id);
-
+                window.location.to("/");
                 swalWithBootstrapButtons.fire(
                     'Eliminado!',
                     'El plato se elimino',
@@ -142,7 +141,7 @@ const DetallePlato = () => {
     
                                 <Link
                                     className="btn bg-red-600 text-center text-xl text-white font-bold p-2 uppercase rounded-md"
-                                    to={confir ? "#" : "/"}
+                                    to="#"
                                     onClick={handelClick}
                                 >
                                     Eliminar

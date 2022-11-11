@@ -8,7 +8,7 @@ const Home = () => {
 
   const [ platos, setPlatos] = useState([]);
   const [ spinner, setSpinner ] = useState(true);
-
+  
 
   useEffect( () =>{
     const consultarApi = async () =>{
